@@ -106,7 +106,7 @@ def check_winnings(columns, lines, bet, values):
   return winnings, winning_lines
  
  
-def spin(balance)
+def spin(balance):
   lines = get_number_of_lines()
   while True:
     bet = get_bet()
@@ -122,7 +122,7 @@ def spin(balance)
   slots = get_machine_spin(ROWS, COLS, symbol_count)
   print_slot_machine(slots)
   winnings, winning_lines = check_winnings(slots, lines, bet, symbol_value)
-  print(f'You Won ${winnings} on lines', *winning_lines)    
+  print(f'You Won ${winnings} on lines:', *winning_lines)    
   
   return winnings - total_bet 
  
@@ -138,6 +138,5 @@ def main():
     
   print(f'Your closing balance is ${balance}')
   
-  
-  
+   
 main()
