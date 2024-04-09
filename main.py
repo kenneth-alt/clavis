@@ -18,7 +18,10 @@ def spin(balance):
     slots = get_machine_spin(ROWS, COLS, SYMBOL_COUNT)
     print_slot_machine(slots)
     winnings, winning_lines = check_winnings(slots, lines, bet, SYMBOL_VALUE)
-    print(f'You Won ${winnings} on lines:', *winning_lines)    
+    if winnings > 0:
+      print(f'You Won ${winnings} on lines:', *winning_lines)   
+    else:
+      print(f'You Won ${winnings}') 
     
     return winnings - total_bet 
    
@@ -26,6 +29,14 @@ def main():
     balance = deposit()
     while True:
         print(f'Current balance: ${balance}')
+        if balance <= 0:
+          response = input("Your balance is $0. Would you like to deposit more? ( Enter Y for yes/ N for no): ").lower()
+          if response == 'y':
+            balance += deposit()
+            continue
+          else:
+            print('Thank you for playing. Goodbye!')
+            break
         play = input('Press Enter to play (Q to quit).')
         if play.upper() == 'Q':
             break

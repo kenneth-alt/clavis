@@ -5,14 +5,14 @@ MIN_BET = 1
 ROWS = 3
 COLS = 3
 
-symbol_count = {
+SYMBOL_COUNT = {
   "A": 2,
   "B": 4,
   "c": 6,
   "D": 8
 }
 
-symbol_value = {
+SYMBOL_VALUE = {
   "A": 5,
   "B": 4,
   "c": 3,
